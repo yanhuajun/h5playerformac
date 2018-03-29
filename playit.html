@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>	
+	<title>h5playerformacx</title>
+</head>
+<body>
+
+	<video id="player" controls="controls" autoplay="autoplay">
+	  
+	</video>
+
+	<form id="form">
+		<input type="text" id="vediourl" style="border:1"/>
+		<input type="button" class="dj" value="解析" />
+	</form>
+
+
+	<script type="text/javascript" src="./static/js/jquery.min.js"></script>
+
+	<script type="text/javascript">
+		$(".dj").on("click", function() {
+		var src = $("#vediourl").val();
+		console.log("vedio url is :"+src);
+		sourceDom = $("<source src=\""+ src +"\">");
+
+		$("#player").append(sourceDom);
+
+		// 自动播放
+		$("#player")[0].play()
+		});
+
+	</script>
+</body>
+</html>
